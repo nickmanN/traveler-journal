@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+		  <div class="page-header">
+			  <h1>Travel Journal <br>
+			  	<small>Welcome to Travel Journal! You can read regulary!</small>
+			  </h1>
+		  </div>
+		  <p></p>
+
+			  {{#each model as |journey|}}
+				  <article class="listing">
+				    <h3>{{journey.title}}</h3>
+				    <div class="detail description">
+				      <span>Description:</span> {{truncate-text journey.description limit=15}}
+				    </div>
+				    <p class="btn btn-default">
+				    {{#link-to 'details'}}
+					    View details
+					  {{/link-to}}
+					  </p>
+				  </article>
+				{{/each}}
+		</div> {{!-- /col --}}
+	</div> {{!-- /row --}}
+</div> {{!-- /container --}}
