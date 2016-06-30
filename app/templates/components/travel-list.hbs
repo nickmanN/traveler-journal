@@ -1,0 +1,39 @@
+{{!-- {{yield}} --}}
+{{#each arrOfJourneys as |journey|}}
+  <article class="listing">
+
+    <h3>{{journey.title}}</h3>
+    <div class="detail description">
+      <span>Description:</span> {{truncate-text journey.description limit=150}}
+    </div>
+    
+    {{#link-to 'details'}}
+	  	<p class="btn btn-default">View details</p>
+	  {{/link-to}}
+	  
+  </article>
+{{/each}}
+
+<h3>You can add your story here:</h3>
+<form class="form-horizontal">
+	<div class="form-group">
+    <label class="col-sm-2 control-label">Story Header</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" placeholder="Your story header">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Story</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" placeholder="Add your story here">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-default">Add</button>
+    </div>
+  </div>
+{{!-- {{input value = textValue}}
+<button{{action 'add' textValue}}>Add</button> --}}
+</form>
